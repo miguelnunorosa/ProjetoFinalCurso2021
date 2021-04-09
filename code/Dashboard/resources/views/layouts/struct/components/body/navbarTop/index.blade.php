@@ -10,13 +10,13 @@
   <ul class="navbar-nav ml-auto">
 
     <!-- Messages Dropdown Menu -->
-    {{-- @include('dashboard.components.body.navbarTop.messages') --}}
+    {{-- @include('layouts.struct.components.body.navbarTop.messages') --}}
 
     <!-- Notifications Dropdown Menu -->
-    {{-- @include('dashboard.components.body.navbarTop.notifications') --}}
+    {{-- @include('layouts.struct.components.body.navbarTop.notifications') --}}
 
 
-    @include('dashboard.components.body.navbarTop.userOptions')
+    @include('layouts.struct.components.body.navbarTop.userOptions')
     <li class="nav-item">
       <a class="nav-link" data-widget="fullscreen" href="#" role="button">
         <i class="fas fa-expand-arrows-alt"></i>

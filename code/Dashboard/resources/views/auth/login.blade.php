@@ -1,10 +1,10 @@
 <html lang="pt">
 
 <head>
-    @include('dashboard.components.head.meta')
-    @include('dashboard.components.head.fonts')
-    @include('dashboard.components.head.css')
-    @include('dashboard.components.head.cssLogin')
+    @include('layouts.struct.components.head.meta')
+    @include('layouts.struct.components.head.fonts')
+    @include('layouts.struct.components.head.css')
+    @include('layouts.struct.components.head.cssLogin')
     <title>Percursos Pedestres em Mértola | Dashboard</title>
 </head>
 
@@ -78,5 +78,5 @@
     </div> <!-- /.login-box -->
    
 
-    @include('dashboard.components.footer.jsBottom')
+    @include('layouts.struct.components.footer.jsBottom')
 </body>
