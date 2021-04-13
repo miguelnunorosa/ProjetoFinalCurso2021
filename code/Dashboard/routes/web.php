@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,13 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 
 Route::group(['middleware' => 'web'], function(){
     Auth::routes();
-    
+
     Route::get('/', function () { return view('auth.login'); });
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+
+    //Users table
+    Route::get('/users', [UsersController::class, 'index'])->name('users.index');
+    Route::post('/users', [UsersController::class, 'store'])->name('users.store');
 });
 
 

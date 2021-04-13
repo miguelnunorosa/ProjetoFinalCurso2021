@@ -4,6 +4,11 @@
 <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}"> <!-- FontAwesome -->
 
 
+<!-- DataTables -->
+<link rel="stylesheet" href="{{asset('vendor/datatables/datatables-bs4/css/dataTables.bootstrap4.css')}}">
+<link rel="stylesheet" href="{{asset('vendor/datatables/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{asset('vendor/datatables/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+
 
 
 <!-- 

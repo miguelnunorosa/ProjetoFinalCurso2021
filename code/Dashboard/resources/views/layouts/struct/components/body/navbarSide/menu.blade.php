@@ -1,6 +1,6 @@
 <!-- Percursos -->
 <li class="nav-item">
-    <a href="#" class="nav-link"><i class="nav-icon fas fa-route"></i> <p>Percursos</p></a>
+    <a href="{{ route('dashboard') }}" class="nav-link"><i class="nav-icon fas fa-route"></i> <p>Percursos</p></a>
 </li>
 
 
@@ -25,6 +25,10 @@
                 <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon fas fa-map-marker-alt"></i> <p>P.O.I.</p></a></li>
             </ul>
         </li>
+
+        <li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link"><i class="nav-icon fas fa-users"></i> <p>Utilizadores</p></a></li>
+
+
 
         <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon far fa-circle"></i> <p>demo only!!</p></a></li>
     </ul>
