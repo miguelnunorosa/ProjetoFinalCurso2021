@@ -49,14 +49,12 @@ class UsersController extends Controller
 
         $saveStatus = $newUser->save();
         if ($saveStatus == true){
-            //Session::flash('message', 'Registo inserido com sucesso.');
-            return redirect()->route('users.index')->with('message','Registo adicionado com sucesso!');
+            toastr()->success('Registo adicionado com sucesso.');
         } else {
-            //Session::flash('error', 'Erro ao inserir o registo.');
-            return redirect()->route('users.index')->with('error','Erro ao inserir o registo. Tente novamente.');
+            toastr()->error('Erro ao inserir o registo. Tente novamente.');
         }
 
-        //return redirect('/users');
+        return redirect('/users');
     }
 
 

@@ -43,7 +43,7 @@
                                 <tr>
                                     <td class="sorting_1 dtr-control">{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td width="10%">
+                                    <td width="8%">
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <button class="btn btn-outline-primary" href="#"><i class="far fa-eye"></i>
                                             </button>
@@ -61,6 +61,8 @@
                 </div>
             </div>
         </div>
+        @toastr_js
+        @toastr_render
 
 
         <!-- Javascript for: DataTables, Modal... -->
