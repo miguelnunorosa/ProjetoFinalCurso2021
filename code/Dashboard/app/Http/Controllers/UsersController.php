@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
+
+
 class UsersController extends Controller
 {
 
@@ -46,13 +48,15 @@ class UsersController extends Controller
         $newUser->photo = "/img/users/default.png"; //default user photo
 
         $saveStatus = $newUser->save();
-        /*if ($saveStatus == true){
-            Session::flash('alert-success', 'Registo inserido com sucesso.');
+        if ($saveStatus == true){
+            //Session::flash('message', 'Registo inserido com sucesso.');
+            return redirect()->route('users.index')->with('message','Registo adicionado com sucesso!');
         } else {
-            Session::flash('alert-danger', 'Erro ao inserir o registo.');
-        }*/
+            //Session::flash('error', 'Erro ao inserir o registo.');
+            return redirect()->route('users.index')->with('error','Erro ao inserir o registo. Tente novamente.');
+        }
 
-        return redirect('/users');
+        //return redirect('/users');
     }
 
 

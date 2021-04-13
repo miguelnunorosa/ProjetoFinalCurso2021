@@ -19,8 +19,8 @@
 <script src="{{asset('vendor/pdfmake/vfs_fonts.js')}}"></script>
 
 
-
-
+<!-- plugins -->
+<script src="{{asset('vendor/toastr/toastr.min.js')}}"></script>
 
 
 

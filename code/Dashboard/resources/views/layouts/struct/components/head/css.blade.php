@@ -10,6 +10,10 @@
 <link rel="stylesheet" href="{{asset('vendor/datatables/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
 
+<!-- plugins -->
+<link rel="stylesheet" href="{{asset('vendor/toastr/toastr.min.css')}}">
 
-<!-- 
+
+
+<!--
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> IonIcons -->

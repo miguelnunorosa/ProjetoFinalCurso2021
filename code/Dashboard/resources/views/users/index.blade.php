@@ -102,7 +102,30 @@
                     ]
                 }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             });
+
+            //flash message
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": true,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            @if(Session::has('message'))  toastr.success("{{ session('message') }}");   @endif
+            @if(Session::has('error'))    toastr.error("{{ session('error') }}");       @endif
+
         </script>
+
 
 
         <div class="clearfix hidden-md-up"></div><!-- fix for small devices only -->
