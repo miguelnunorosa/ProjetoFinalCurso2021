@@ -21,6 +21,7 @@
 
 <!-- plugins -->
 <script src="{{asset('vendor/toastr/toastr.min.js')}}"></script>
+<script src="{{asset('vendor/fastclick/fastclick.js')}}"></script>
 
 
 

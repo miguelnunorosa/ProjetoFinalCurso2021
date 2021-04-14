@@ -12,6 +12,7 @@
 
     @include('users.modal_InsertNew')
 
+
     <div class="row">
         @section('pageTitle') <h1>Utilizadores do Sistema</h1> @endsection
 
@@ -32,6 +33,7 @@
                                role="grid" aria-describedby="table_users">
                             <thead>
                                 <tr role="row">
+                                    <th></th>
                                     <th class="sorting_asc" width="30%" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Nome: activa a ordenação da coluna">Nome</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Email: activa a ordenação da coluna">Email</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Ações</th>
@@ -41,13 +43,13 @@
                             <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td class="sorting_1 dtr-control">{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td width="8%">
+                                    <td width="5%" style="vertical-align: middle;"><img src="{{ asset($user->photo) }}" class="img-circle elevation-2" alt="User Image" style="width: 100px; height: 100px"></td>
+                                    <td class="sorting_1 dtr-control" style="vertical-align: middle;" >{{ $user->name }}</td>
+                                    <td style="vertical-align: middle;" >{{ $user->email }}</td>
+                                    <td style="vertical-align: middle;"  width="8%">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button class="btn btn-outline-primary" href="#"><i class="far fa-eye"></i>
-                                            </button>
-                                            <button class="btn btn-outline-warning" href="#" id="editUser" data-toggle="modal" data-target='#name_of_modal' data-id="{{ $user->id }}"><i class="fas fa-user-edit"></i></button>
+                                            <button class="btn btn-outline-primary"><i class="far fa-eye"></i></button>
+                                            <button class="btn btn-outline-warning" id="editUser" data-toggle="modal" data-target='#editUser' data-id="{{ $user->id }}"><i class="fas fa-user-edit"></i></button>
                                             <button class="btn btn-outline-danger" href="#"><i class="fas fa-trash-alt"></i></button>
                                         </div>
                                     </td>
@@ -75,21 +77,34 @@
                     "lengthChange": false,
                     "autoWidth": false,
                     "paging": true,
-                    "searching": false,
+                    "searching": true,
                     "ordering": true,
                     "info": true,
                     "pageLength": 5,
+                    "language": {
+                        "lengthMenu": "Registos: _MENU_",
+                        "zeroRecords": "Não foram encontrados registos.",
+                        "info": "Página _PAGE_ de _PAGES_",
+                        "infoEmpty": "Sem registos disponíveis",
+                        "infoFiltered": "(filtrado de _MAX_ registos.)",
+                        "search": "Pesquisar",
+                        "paginate": {
+                            "next": "<i class='fa fa-chevron-right'></i>",
+                            "previous": "<i class='fa fa-chevron-left'></i>"
+                        },
+                    },
                     buttons: [
                         {
                             id: 'btnExportPdf',
                             extend: 'pdfHtml5',
                             orientation: 'portrait',
                             message: 'Relatório: Listagem de utilizadores.',
+                            title: 'GND - Listagem Atletas',
                             pageSize: 'LEGAL',
                             text: '<i class="fas fa-print"></i> Exportar PDF',
                             className: 'btn-warning',
                             exportOptions: {
-                                columns: [0, 1]
+                                columns: [1, 2]
                             }
                         },
                         {
@@ -98,14 +113,14 @@
                             text: '<i class="fa fa-print"></i> Imprimir',
                             className: 'btn-info',
                             exportOptions: {
-                                columns: [0, 1]
+                                columns: [1, 2]
                             }
                         }
                     ]
                 }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             });
 
-            //flash message
+            //flash message for CRUD
             toastr.options = {
                 "closeButton": false,
                 "debug": false,

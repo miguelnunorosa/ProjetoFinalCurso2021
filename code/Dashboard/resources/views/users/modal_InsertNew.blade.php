@@ -10,28 +10,29 @@
 
 
             <div class="modal-body">
-                <form class="form-group" action="{{ route('users.store') }}" method="POST">@csrf
+                <form class="form-group" action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">@csrf
                     {{--  <input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
 
 
                     <div class="col-sm-10">
                       <label class="control-label col-sm-2">Nome</label>
-                      <input class="form-control" type="text" name="form_name" id="name" placeholder="Nome" required maxlength="220" value="{{old("name")}}">
+                      <input class="form-control" type="text" name="form_name" id="name" placeholder="Nome" required maxlength="220">
                     </div>
 
                     <div class="col-sm-10">
                       <label class="control-label col-sm-2">Email</label>
-                      <input class="form-control" type="email" name="form_email" id="email" placeholder="Email" required maxlength="220" value="{{old("email")}}">
+                      <input class="form-control" type="email" name="form_email" id="email" placeholder="Email" required maxlength="220">
                     </div>
 
                     <div class="col-sm-10">
                       <label class="control-label col-sm-2">Password</label>
-                      <input class="form-control" type="password" name="form_password" id="password" placeholder="Password" required maxlength="220" value="{{old("password")}}">
+                      <input class="form-control" type="password" name="form_password" id="password" placeholder="Password" required maxlength="220">
                     </div>
 
-                    <!--<div class="col-sm-10 form-group">
+                    <div class="col-sm-10 form-group">
                       <label for="userPhoto">Fotografia</label>
-                      <input type="file" class="form-control-file" id="form_photo">
+                      <!--<input type="file" class="form-control-file" id="form_photo">-->
+                      <input type="file" class="form-control-file" name="form_photo" required>
                     </div>-->
 
                     <br>
