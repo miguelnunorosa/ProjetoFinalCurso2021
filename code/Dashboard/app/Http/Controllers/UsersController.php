@@ -45,9 +45,7 @@ class UsersController extends Controller
         $newUser->email = $payload['form_email'];
         $newUser->password = Hash::make($payload['form_password']);
         $newUser->created_at = $date;
-
-        //$newUser->photo = "/img/users/default.png"; //default user photo   TODO REVER
-        $newUser->photo = $request->file('form_photo')->storeAs('img/users', $newUser->name);
+        $newUser->photo = "img/users/default.png"; //default user photo   TODO REVER
 
 
 
@@ -59,6 +57,7 @@ class UsersController extends Controller
         }
 
         return redirect('/users');
+
     }
 
 
