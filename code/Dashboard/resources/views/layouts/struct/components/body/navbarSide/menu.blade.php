@@ -15,7 +15,7 @@
     <a href="#" class="nav-link"><i class="nav-icon fas fa-tachometer-alt"></i> <p>Definições <i class="right fas fa-angle-left"></i></p></a>
 
     <ul class="nav nav-treeview">
-        <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon far fa-circle"></i> <p>Fauna / Flora</p></a></li>
+        <!--<li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon far fa-circle"></i> <p>Fauna / Flora</p></a></li> -->
         <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon fas fa-crow"></i> <p>Fauna</p></a></li>
         <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon fas fa-tree"></i> <p>Flora</p></a></li>
 
@@ -30,7 +30,7 @@
 
 
 
-        <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon far fa-circle"></i> <p>demo only!!</p></a></li>
+        <!-- <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon far fa-circle"></i> <p>demo only!!</p></a></li> -->
     </ul>
 
 </li><!-- ./definicoes -->
