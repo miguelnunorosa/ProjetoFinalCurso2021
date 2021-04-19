@@ -48,7 +48,7 @@
                                     <td style="vertical-align: middle;" >{{ $user->email }}</td>
                                     <td style="vertical-align: middle;"  width="8%">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button class="btn btn-outline-primary"><i class="far fa-eye"></i></button>
+                                            <button class="btn btn-outline-primary" data-id="{{ $user->id }}" href="{{ route('users.showSelectedUser', $user->id)  }}"><i class="far fa-eye"></i></button>
                                             <button class="btn btn-outline-warning" id="editUser" data-toggle="modal" data-target='#editUser' data-id="{{ $user->id }}"><i class="fas fa-user-edit"></i></button>
                                             <button class="btn btn-outline-danger" href="#"><i class="fas fa-trash-alt"></i></button>
                                         </div>

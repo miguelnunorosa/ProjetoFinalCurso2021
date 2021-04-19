@@ -31,6 +31,12 @@ class UsersController extends Controller
         return view ('users.index', ['users' => $user]);
     }
 
+    public function showUserDetails($id){
+        $user = User::find($id);
+
+        return view('users.userDetails');
+    }
+
 
 
     public function store(Request $request){

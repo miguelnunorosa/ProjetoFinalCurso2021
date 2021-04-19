@@ -6,6 +6,12 @@
     @include('layouts.struct.components.head.css')
     @include('layouts.struct.components.head.cssLogin')
     <title>Percursos Pedestres em Mértola | Dashboard</title>
+    <style type="text/css">
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body class="login-page" style="min-height: 466px;">
@@ -14,7 +20,7 @@
 
         <div class="card card-outline card-success">
             <div class="card-header text-center">
-                <img src="{{ asset('img/system/logo.png') }}" style="padding-bottom: 1em; width: 80%; height: 80%;" />
+                <img src="{{ asset('img/system/logo.png') }}"/>
             </div>
 
             <div class="card-body">
@@ -57,7 +63,7 @@
                                 <label for="remember"> {{ __('Memorizar') }} </label>
                             </div>
                         </div>
-                    
+
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary"> {{ __('Login') }} </button>
                         </div>
@@ -65,7 +71,7 @@
 
 
                 </form>
-                
+
                 <p class="mb-1">
                     @if (Route::has('password.request'))
                         <a class="btn btn-link" href="{{ route('password.request') }}"> {{ __('Recuperar Password?') }} </a>
@@ -76,7 +82,7 @@
         </div><!-- ./card -->
 
     </div> <!-- /.login-box -->
-   
+
 
     @include('layouts.struct.components.footer.jsBottom')
 </body>

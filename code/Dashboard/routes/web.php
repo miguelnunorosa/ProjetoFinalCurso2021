@@ -25,4 +25,5 @@ Route::group(['middleware' => 'web'], function(){
     //Users table
     Route::get('/users', [UsersController::class, 'index'])->name('users.index');
     Route::post('/users', [UsersController::class, 'store'])->name('users.store');
+    Route::get('/users/{id}', [UsersController::class, 'showSelectedUser'])->name('users.showSelectedUser');
 });
