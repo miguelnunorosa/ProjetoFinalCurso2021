@@ -19,11 +19,13 @@
         </a>
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> Gerir Conta</a>
+            <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Perfil</a>
+            <!--<a class="dropdown-item" data-widget="fullscreen" href="#" role="button"><i class="fas fa-expand-arrows-alt"></i> Fullscreen</a>-->
+
+            <hr>
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="fas fa-sign-out-alt"></i> {{ __('Sair') }}
             </a>
-
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
             </form>

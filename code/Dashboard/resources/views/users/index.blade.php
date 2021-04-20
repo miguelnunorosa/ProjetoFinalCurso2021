@@ -43,7 +43,7 @@
                             <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td width="5%" style="vertical-align: middle;"><img src="{{ asset($user->photo) }}" class="img-circle elevation-2" alt="User Image" style="width: 100px; height: 100px"></td>
+                                    <td width="5%" style="vertical-align: middle;"><img src="{{ asset($user->photo) }}" class="img-circle elevation-2" alt="{{$user->name}} photo" style="width: 100px; height: 100px"></td>
                                     <td class="sorting_1 dtr-control" style="vertical-align: middle;" >{{ $user->name }}</td>
                                     <td style="vertical-align: middle;" >{{ $user->email }}</td>
                                     <td style="vertical-align: middle;"  width="8%">

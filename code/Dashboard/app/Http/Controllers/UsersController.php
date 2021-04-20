@@ -24,6 +24,8 @@ class UsersController extends Controller
 
     /**
      * Function to list all system users
+     *
+     * @return view (users.index) with all information from get (query to database).
      */
     public function index(){
         $user = User::get();
@@ -31,15 +33,26 @@ class UsersController extends Controller
         return view ('users.index', ['users' => $user]);
     }
 
-    public function showUserDetails($id){
+    /**
+     * Show all information from selected user (from list users and from logged user).
+     *
+     * @param $id (selected (or logged) user id)
+     * @return view with all information
+     */
+    public function showUserDetails($id){   //TODO refactor this function
         $user = User::find($id);
 
         return view('users.userDetails');
     }
 
 
-
-    public function store(Request $request){
+    /**
+     * Save/register new user into database
+     *
+     * @param Request $request data from form
+     * @return return to users list and show flash message if operation was success/failed
+     */
+    public function store(Request $request){   //TODO refactor and implement image
         $payload = $request->post();
 
         $date = new DateTime();
@@ -51,8 +64,16 @@ class UsersController extends Controller
         $newUser->email = $payload['form_email'];
         $newUser->password = Hash::make($payload['form_password']);
         $newUser->created_at = $date;
-        $newUser->photo = "img/users/default.png"; //default user photo   TODO REVER
+        $newUser->photo = "img/users/default.png";     //default user photo   TODO REVER
 
+        /*if( $request->hasFile('form_photo')) {
+            $image = $request->file('form_photo');
+            $path = public_path() . '/img/users/';
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move($path, $filename);
+
+            $newUser->photo = $path;
+        }*/
 
 
         $saveStatus = $newUser->save();
