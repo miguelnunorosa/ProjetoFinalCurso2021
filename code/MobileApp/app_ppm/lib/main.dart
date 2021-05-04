@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:app_ppm/views/Home.dart';
+import 'package:app_ppm/views/SplashScreen.dart';
+import 'package:flutter/services.dart';
 
 
 
@@ -13,8 +14,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    SystemChrome.setEnabledSystemUIOverlays ([]);   // to make fullscreen
+
     return MaterialApp(
-      home: Home(),
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
     );
   }
 }
