@@ -9,16 +9,16 @@ class SplashScreen extends StatelessWidget {
     SystemChrome.setEnabledSystemUIOverlays([]); // to make fullscreen
 
     return Container(
-      color: Colors.black,
+      //color: Colors.black,
       child: Stack(
         children: [
           //background Image
           Image(
             image: AssetImage('assets/img/app_background.png'),
             fit: BoxFit.cover,
-            height: double.infinity,
-            width: double.infinity,
-            alignment: Alignment.center,
+            width: double.maxFinite,
+            height: double.maxFinite,
+              alignment: Alignment.topCenter,
           ),
 
           //icon walk
@@ -43,7 +43,7 @@ class SplashScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xffffdc25),
                       fontSize: 45,
-                      fontFamily: "Roboto",
+                      fontFamily: "Ubuntu",
                       decoration: TextDecoration.none,
                       fontWeight: FontWeight.w700,
                     ),
@@ -64,6 +64,7 @@ class SplashScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xffff4c25),
                       fontSize: 52,
+                      fontFamily: "Ubuntu",
                       decoration: TextDecoration.none,
                       fontWeight: FontWeight.w700,
                     ),

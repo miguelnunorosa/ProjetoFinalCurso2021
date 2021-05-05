@@ -28,17 +28,18 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/img/
+    - pubspec.yaml
   #   - images/a_dot_ham.jpeg
 
   fonts:
-    - family: Roboto
+    - family: Ubuntu
       fonts:
-        - asset: assets/fonts/Roboto-Regular.ttf
-        - asset: assets/fonts/Roboto-Italic.ttf
+        - asset: assets/fonts/Ubuntu-Regular.ttf
+        - asset: assets/fonts/Ubuntu-Italic.ttf
           style: italic
-        - asset: assets/fonts/Roboto-Bold.ttf
+        - asset: assets/fonts/Ubuntu-Bold.ttf
           weight: 700
-        - asset: assets/fonts/Roboto-BoldItalic.ttf
+        - asset: assets/fonts/Ubuntu-BoldItalic.ttf
           style: italic
           weight: 700
   # An image asset can refer to one or more resolution-specific "variants", see
