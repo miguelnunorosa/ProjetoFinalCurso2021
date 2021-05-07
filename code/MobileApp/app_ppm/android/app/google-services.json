@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "1009343453936",
-    "firebase_url": "https://app-percursos-pedestres2021-default-rtdb.europe-west1.firebasedatabase.app",
-    "project_id": "app-percursos-pedestres2021",
-    "storage_bucket": "app-percursos-pedestres2021.appspot.com"
+    "project_number": "73830942881",
+    "project_id": "app-percursospedestres",
+    "storage_bucket": "app-percursospedestres.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1009343453936:android:306330719c2d9ddf470035",
+        "mobilesdk_app_id": "1:73830942881:android:9ad285607399a576e388e0",
         "android_client_info": {
           "package_name": "io.github.miguelnunorosa.app_ppm"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1009343453936-nuf5gj03er4b1br28cldu5bn3ah8l12t.apps.googleusercontent.com",
+          "client_id": "73830942881-vum6htssu09aptef1gsgco7nrj8c624d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBnX7QbrpT_4eeBFHksrBjooph6XPdLcRM"
+          "current_key": "AIzaSyAem_lt3vDjKUxhKw7ld-oGE-WsDigVvdU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1009343453936-nuf5gj03er4b1br28cldu5bn3ah8l12t.apps.googleusercontent.com",
+              "client_id": "73830942881-vum6htssu09aptef1gsgco7nrj8c624d.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

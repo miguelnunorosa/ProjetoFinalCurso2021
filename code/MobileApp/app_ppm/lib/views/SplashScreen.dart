@@ -1,13 +1,59 @@
 import 'dart:ui';
-
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:app_ppm/views/Home.dart';
 
-class SplashScreen extends StatelessWidget {
+import 'package:firebase_core/firebase_core.dart';
+
+
+
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key key}) : super(key: key);
+
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  final _splashDelay = 5; //value (time) in seconds
+
+
+  @override
+  void initState(){
+    super.initState();
+
+    _loadScreen();
+  }
+
+
+  _loadScreen() async{
+    var _duration = Duration(seconds: _splashDelay);
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
+
+    return Timer(_duration, _navigateToPage);
+  }
+
+
+  void _navigateToPage(){
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => Home()
+        )
+    );
+  }
+
+
+  
+
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays([]); // to make fullscreen
 
+    //TODO rever UI
     return Container(
       //color: Colors.black,
       child: Stack(
@@ -18,7 +64,7 @@ class SplashScreen extends StatelessWidget {
             fit: BoxFit.cover,
             width: double.maxFinite,
             height: double.maxFinite,
-              alignment: Alignment.topCenter,
+            alignment: Alignment.topCenter,
           ),
 
           //icon walk
@@ -28,7 +74,7 @@ class SplashScreen extends StatelessWidget {
               width: 102,
               height: 102,
               child:
-                  Icon(Icons.directions_walk, size: 150, color: Colors.white),
+              Icon(Icons.directions_walk, size: 150, color: Colors.white),
             ),
           ),
 
