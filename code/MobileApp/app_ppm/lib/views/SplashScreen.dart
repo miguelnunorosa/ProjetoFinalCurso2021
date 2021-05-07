@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
             height: double.maxFinite,
             alignment: Alignment.topCenter,
           ),
-          
+
           //icon walk
           Positioned(
             top: 451,

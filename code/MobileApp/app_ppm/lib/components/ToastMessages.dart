@@ -4,14 +4,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 class ToastMessages{
 
 
-  /**
-   * Class constructor.
-   */
+  ///
+  /// Class construtor
   ToastMessages();
 
-  /**
-   * Function to show custom toast (float) messages
-   */
+  ///
+  ///Function to show custom toast (float) messages
   showToast(String message){
     return Fluttertoast.showToast(
       msg: message,
