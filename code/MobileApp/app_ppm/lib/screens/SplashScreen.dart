@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    //_loadScreen();
+    _loadScreen();
   }
 
   _loadScreen() async {
