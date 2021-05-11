@@ -1,1 +1,1 @@
-const VIEW_HOME = '/home';
+const SCREEN_HOME = '/home';

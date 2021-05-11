@@ -1,0 +1,1 @@
+const imgSvgIconTrekking = "assets/icons/hiking-solid.svg";
