@@ -28,6 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
   _loadScreen() async {
     var _duration = Duration(seconds: _splashDelay);
     WidgetsFlutterBinding.ensureInitialized();
+
     await Firebase.initializeApp();
 
     return Timer(_duration, _navigateToPage);
@@ -35,7 +36,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _navigateToPage() {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (BuildContext context) => Home()));
+        context,
+        MaterialPageRoute(
+            builder: (BuildContext context) => Home()
+        )
+    );
   }
 
   @override
@@ -116,9 +121,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CircularProgressIndicator(
-                  backgroundColor: Colors.white,
-                ),
+                CircularProgressIndicator(),
               ],
             ),
           ),
