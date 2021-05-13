@@ -1,9 +1,9 @@
 import 'dart:ui';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:app_ppm/screens/Home.dart';
-
 import 'package:firebase_core/firebase_core.dart';
+import 'package:app_ppm/screens/components/BackgorundImage.dart';
+import 'package:app_ppm/screens/Home.dart';
 
 
 
@@ -13,7 +13,6 @@ class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
-
 
 class _SplashScreenState extends State<SplashScreen> {
   final _splashDelay = 5; //value (time) in seconds
@@ -35,12 +34,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _navigateToPage() {
-    Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-            builder: (BuildContext context) => Home()
-        )
-    );
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (BuildContext context) => HomePage()));
   }
 
   @override
@@ -49,25 +44,15 @@ class _SplashScreenState extends State<SplashScreen> {
     return Container(
       //color: Colors.black,
       child: Stack(
-          //alignment: Alignment.center,
         children: [
           //background Image
-          Image(
-            image: AssetImage('assets/img/app_background.png'),
-            fit: BoxFit.cover,
-            filterQuality: FilterQuality.medium,
-            width: double.maxFinite,
-            height: double.maxFinite,
-            alignment: Alignment.topCenter,
-          ),
+          BackgroundImage(),
 
-          //icon walk
           Positioned(
             bottom: 201,
             left: 50,
             child: Container(
-              child:
-                  Icon(Icons.directions_walk, size: 95, color: Colors.white),
+              child: Icon(Icons.directions_walk, size: 95, color: Colors.white),
             ),
           ),
 
@@ -78,7 +63,8 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Stack(
               children: [
                 SizedBox(
-                  child: Text( "PERCURSOS",
+                  child: Text(
+                    "PERCURSOS",
                     style: TextStyle(
                       color: Color(0xffffdc25),
                       fontSize: 44,
@@ -94,13 +80,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
           //text PEDESTRES
           Positioned(
-            bottom: 150,
-            left: 40,
-            right: 40,
+            bottom: 155,
+            left: 55,
             child: Stack(
               children: [
                 SizedBox(
-                  child: Text( "PEDESTRES",
+                  child: Text(
+                    "PEDESTRES",
                     style: TextStyle(
                       color: Color(0xffff4c25),
                       fontSize: 60,
@@ -114,17 +100,11 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
 
-          //Circular Progress Indicator
           Positioned(
             bottom: 100,
-            left: 190,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CircularProgressIndicator(),
-              ],
-            ),
+            child: Container(),
           ),
+
 
         ],
       ),
