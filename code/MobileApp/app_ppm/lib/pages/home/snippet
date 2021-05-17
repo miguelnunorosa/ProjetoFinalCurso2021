@@ -6,3 +6,40 @@ ListView(
     );
   }).toList(),
 );
+
+
+
+
+========================================================0000
+
+Container(
+    alignment: Alignment.centerLeft,
+    padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+    height: MediaQuery.of(context).size.height / 6,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text( document['codRoute'] ,
+            //textAlign: TextAlign.left,
+            style: TextStyle(
+              fontSize: 20,
+              fontFamily: 'Ubuntu',
+              fontWeight: FontWeight.normal,
+              color: Colors.white,
+              decoration: TextDecoration.none,
+            )
+        ),
+
+        Text( document['title'] ,
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              fontSize: 20,
+              fontFamily: 'Ubuntu',
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              decoration: TextDecoration.none,
+            )
+        )
+      ],
+    ),
+    )
