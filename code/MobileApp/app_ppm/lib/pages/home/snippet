@@ -1,0 +1,8 @@
+ListView(
+  children: snapshot.data.docs.map((document) {
+     return Container(
+       width: MediaQuery.of(context).size.width / 1.2,
+       child: Text( document['title'] ),
+    );
+  }).toList(),
+);
