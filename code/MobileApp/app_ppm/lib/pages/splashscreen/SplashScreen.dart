@@ -2,8 +2,10 @@ import 'dart:ui';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:app_ppm/screens/components/BackgorundImage.dart';
-import 'package:app_ppm/screens/Home.dart';
+
+import 'package:app_ppm/pages/components/BackgroundImage.dart';
+import 'package:app_ppm/pages/home/home_page.dart';
+
 
 
 

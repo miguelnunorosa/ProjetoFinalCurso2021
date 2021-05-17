@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-import 'package:app_ppm/screens/SplashScreen.dart';
+import 'package:app_ppm/pages/splashscreen/SplashScreen.dart';
+
+
 
 
 
