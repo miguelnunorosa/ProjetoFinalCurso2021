@@ -1,6 +1,8 @@
+import 'package:app_ppm/pages/components/MainLateralMenu.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ppm/pages/components/BackgroundImage.dart';
+import 'package:app_ppm/pages/components/CustomErrorWidget.dart';
 import 'package:app_ppm/pages/components/ToastMessages.dart';
 
 
@@ -20,8 +22,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  //_HomePageState();
-  final Query _forCollection = FirebaseFirestore.instance.collection("tmp-percursos");//.orderBy("codRoute", "asc");
+  _HomePageState();
+  final Query _forCollection = FirebaseFirestore.instance.collection("percursos");//.orderBy("codRoute", "asc");
 
 
   @override
@@ -34,33 +36,20 @@ class _HomePageState extends State<HomePage> {
       ),
 
       body: StreamBuilder(
-        stream: _forCollection.orderBy("codRoute").snapshots(), //FirebaseFirestore.instance.collection('tmp-percursos').snapshots(),
+        stream: _forCollection.snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
 
           if(snapshot.hasError){
-            return Container(
-              child: Stack(
-                children: [
-                  BackgroundImage(),
-                  Text( "Ocorreu um erro. Por favor tente mais tarde." ,
-                      //textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'Ubuntu',
-                        fontWeight: FontWeight.normal,
-                        color: Colors.white,
-                        decoration: TextDecoration.none,
-                      )
-                  ),
-                ],
-              ),
+            return Stack(
+              children: [
+                BackgroundImage(),
+                Center( child: CustomErrorWidget() ),
+              ],
             );
           }
 
           if( !snapshot.hasData ){
-            return Center(
-              child: CircularProgressIndicator(),
-            );
+            return Center( child: CircularProgressIndicator() );
           }else{
             return Container(
               child: Stack(
@@ -80,12 +69,11 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.transparent,
 
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Text( document['codRoute'] ,
-                                      //textAlign: TextAlign.left,
+                                  Text( document.id ,
                                       style: TextStyle(
-                                        fontSize: 18,
+                                        fontSize: 20,
                                         fontFamily: 'Ubuntu',
                                         fontWeight: FontWeight.normal,
                                         color: Colors.white,
@@ -103,13 +91,9 @@ class _HomePageState extends State<HomePage> {
                                         decoration: TextDecoration.none,
                                       )
                                   ),
-
-                                  Icon(
-                                    Icons.arrow_forward_ios_rounded,
-                                    color: Colors.white,
-                                  ),
                                 ],
-                              ),
+                              )
+
                             ),
                             onTap: (){
                               //TODO CREATE OPEN PAGE WITH DATA
@@ -127,49 +111,8 @@ class _HomePageState extends State<HomePage> {
         },
       ),
 
-
-
-
-
-      /*body: Container(
-          child: Stack(
-            children: [
-              BackgroundImage(),
-
-              Center(
-                child: ListView.builder(
-                  padding: const EdgeInsets.fromLTRB(16, 32, 16, 32),
-                  itemCount: 30,
-                  itemBuilder: (BuildContext context, int index){
-                    return Container(
-                      height: 100,
-                      color: Color.fromRGBO(0, 0, 0, 99.77),
-                      child: Container(
-                        alignment: Alignment.centerLeft,
-                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                        child: Text('Entry ${[index + 1]}',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Ubuntu',
-                            fontWeight: FontWeight.normal,
-                            color: Colors.white,
-                            decoration: TextDecoration.none,
-                          ),
-                        ),
-                      ),
-
-                    );
-                  },
-                ),
-              ),
-
-
-
-            ],
-          ),
-      ),*/
-
+      drawer: MainLateralMenu(),
+      
     );
   }
 

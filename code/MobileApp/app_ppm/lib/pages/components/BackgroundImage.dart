@@ -8,7 +8,7 @@ class BackgroundImage extends StatelessWidget {
     Key key
   }) : super(key: key);
 
-  final _imagePath = 'assets/img/app_background.png';
+  final _imagePath = 'assets/img/bg_mertola.jpeg';
 
 
   @override

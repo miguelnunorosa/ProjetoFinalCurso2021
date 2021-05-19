@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'dart:async';
+import 'package:app_ppm/pages/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -68,7 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Text(
                     "PERCURSOS",
                     style: TextStyle(
-                      color: Color(0xffffdc25),
+                      color: PPTheme().primaryColor,
                       fontSize: 44,
                       fontFamily: "Ubuntu",
                       decoration: TextDecoration.none,
@@ -90,7 +91,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Text(
                     "PEDESTRES",
                     style: TextStyle(
-                      color: Color(0xffff4c25),
+                      color: PPTheme().accentColor,
                       fontSize: 60,
                       fontFamily: "Ubuntu",
                       decoration: TextDecoration.none,
