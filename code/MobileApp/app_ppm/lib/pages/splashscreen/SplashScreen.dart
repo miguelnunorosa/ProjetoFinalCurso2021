@@ -1,14 +1,11 @@
 import 'dart:ui';
 import 'dart:async';
-import 'package:app_ppm/pages/theme.dart';
+import 'package:app_ppm/constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:app_ppm/pages/components/BackgroundImage.dart';
 import 'package:app_ppm/pages/home/home_page.dart';
-
-
-
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key key}) : super(key: key);
@@ -18,7 +15,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  final _splashDelay = 5; //value (time) in seconds
+  final _splashDelay = 3; //value (time) in seconds
 
   @override
   void initState() {
@@ -107,8 +104,6 @@ class _SplashScreenState extends State<SplashScreen> {
             bottom: 100,
             child: Container(),
           ),
-
-
         ],
       ),
     );

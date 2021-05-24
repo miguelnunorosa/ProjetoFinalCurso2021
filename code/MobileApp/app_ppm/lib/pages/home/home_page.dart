@@ -1,30 +1,22 @@
-import 'package:app_ppm/pages/components/MainLateralMenu.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:app_ppm/constants/theme.dart';
+import 'package:app_ppm/pages/components/MainLateralMenu.dart';
 import 'package:app_ppm/pages/components/BackgroundImage.dart';
 import 'package:app_ppm/pages/components/CustomErrorWidget.dart';
 import 'package:app_ppm/pages/components/ToastMessages.dart';
 
-
-
-
 class HomePage extends StatefulWidget {
-
-
-  HomePage({
-    Key key
-  }) : super(key: key);
-
+  HomePage({Key key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
   _HomePageState();
-  final Query _forCollection = FirebaseFirestore.instance.collection("percursos");//.orderBy("codRoute", "asc");
-
+  final Query _forCollection = FirebaseFirestore.instance
+      .collection("percursos"); //.orderBy("codRoute", "asc");
 
   @override
   Widget build(BuildContext context) {
@@ -34,28 +26,25 @@ class _HomePageState extends State<HomePage> {
         title: Text("Percursos Pedestres"),
         backgroundColor: Colors.black,
       ),
-
       body: StreamBuilder(
         stream: _forCollection.snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
-
-          if(snapshot.hasError){
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
             return Stack(
               children: [
                 BackgroundImage(),
-                Center( child: CustomErrorWidget() ),
+                Center(child: CustomErrorWidget()),
               ],
             );
           }
 
-          if( !snapshot.hasData ){
-            return Center( child: CircularProgressIndicator() );
-          }else{
+          if (!snapshot.hasData) {
+            return Center(child: CircularProgressIndicator());
+          } else {
             return Container(
               child: Stack(
                 children: [
                   BackgroundImage(),
-
                   Center(
                     child: ListView(
                       padding: EdgeInsets.fromLTRB(16, 32, 16, 0),
@@ -67,37 +56,40 @@ class _HomePageState extends State<HomePage> {
                             child: Card(
                               elevation: 2,
                               color: Colors.transparent,
-
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                              child: Stack(
+                                alignment: Alignment.center,
                                 children: [
-                                  Text( document.id ,
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontFamily: 'Ubuntu',
-                                        fontWeight: FontWeight.normal,
-                                        color: Colors.white,
-                                        decoration: TextDecoration.none,
-                                      )
-                                  ),
-
-                                  Text( document['title'] ,
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontFamily: 'Ubuntu',
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        decoration: TextDecoration.none,
-                                      )
-                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(document.id,
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            fontFamily: 'Ubuntu',
+                                            fontWeight: FontWeight.normal,
+                                            color: Colors.white,
+                                            decoration: TextDecoration.none,
+                                          )),
+                                      Text(document['title'],
+                                          textAlign: TextAlign.left,
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            fontFamily: 'Ubuntu',
+                                            fontWeight: FontWeight.bold,
+                                            color: PPTheme().primaryColor,
+                                            decoration: TextDecoration.none,
+                                          )),
+                                    ],
+                                  )
                                 ],
-                              )
-
+                              ),
                             ),
-                            onTap: (){
+                            onTap: () {
                               //TODO CREATE OPEN PAGE WITH DATA
-                              ToastMessages().showToast("Selected Route: \n \"" + document['title'].toString() + "\" ");
+                              ToastMessages().showToast(
+                                  "Selected Route: \n \"" +
+                                      document['title'].toString() +
+                                      "\" ");
                             },
                           ),
                         );
@@ -110,11 +102,7 @@ class _HomePageState extends State<HomePage> {
           }
         },
       ),
-
       drawer: MainLateralMenu(),
-      
     );
   }
-
 }
-
