@@ -16,7 +16,7 @@ class BackgroundImage extends StatelessWidget {
     return Image(
       image: AssetImage(_imagePath),
       fit: BoxFit.cover,
-      filterQuality: FilterQuality.medium,
+      filterQuality: FilterQuality.high,
       width: double.maxFinite,
       height: double.maxFinite,
       alignment: Alignment.topCenter,

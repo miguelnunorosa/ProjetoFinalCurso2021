@@ -34,8 +34,11 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _navigateToPage() {
-    Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (BuildContext context) => HomePage()));
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (BuildContext context) => HomePage(),)
+    );
   }
 
   @override
@@ -48,6 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
           //background Image
           BackgroundImage(),
 
+          //icon
           Positioned(
             bottom: 201,
             left: 50,

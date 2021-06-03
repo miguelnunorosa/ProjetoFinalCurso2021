@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                         return Container(
                           width: MediaQuery.of(context).size.width / 1.2,
                           height: MediaQuery.of(context).size.height / 8,
-                          child: GestureDetector(
+                          child: InkWell(
                             child: Card(
                               elevation: 2,
                               color: Colors.transparent,
