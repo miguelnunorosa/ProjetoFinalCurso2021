@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:app_ppm/screens/home/home.dart';
 import 'package:app_ppm/screens/splash/SplashScreen.dart';
+import 'package:app_ppm/utils/routes.dart' as my_routes;
 
 
 Future<void> main() async{
@@ -24,7 +25,7 @@ Future<void> main() async{
 
 
 class App extends StatelessWidget {
-  const App({Key key}) : super(key: key);
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,7 @@ class App extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: true,
+      initialRoute: my_routes.SCREEN_SPLASH,
       home: SplashScreen(),
     );
   }

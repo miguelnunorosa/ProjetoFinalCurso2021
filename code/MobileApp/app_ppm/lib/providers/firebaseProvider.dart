@@ -7,7 +7,6 @@ class firebaseProvider extends ChangeNotifier{
   final firestoreInstance = FirebaseFirestore.instance;
 
 
-
   //TODO aceder a collection no firebase
 
 
