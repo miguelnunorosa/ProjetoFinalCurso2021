@@ -3,23 +3,23 @@ import 'package:app_ppm/providers/firebaseProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
+
+
+
 class Home extends StatelessWidget {
   Home({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
-        title: Text("Percursos Pedestres em Mértola"),
-        backgroundColor: Color(0x000000),
-      ),*/
       body: ChangeNotifierProvider(
         create: (BuildContext context) {
           return firebaseProvider();
         },
         child: Container(
-          padding: const EdgeInsets.all(8),
-          color: Colors.grey,
+          //padding: const EdgeInsets.all(8),
+          //color: Colors.grey,
           child: Stack(
             children: [
               BackgroundImage(),
@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
                   itemCount: 20,
                   itemBuilder: (context, index){
                     return Container(
-                      height: 120,
+                      height: 90,
                       width: double.maxFinite,
                       child: GestureDetector(
                         child: Card(
@@ -51,6 +51,9 @@ class Home extends StatelessWidget {
                             ],
                           ),
                         ),
+                        onTap: (){
+                          print("app: " + "${Provider.of<firebaseProvider>(context, listen: false).xpto2((index + 1).toString())}" );
+                        },
                       ),
                     );
                   },
@@ -61,6 +64,7 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
+
     );
   }
 }

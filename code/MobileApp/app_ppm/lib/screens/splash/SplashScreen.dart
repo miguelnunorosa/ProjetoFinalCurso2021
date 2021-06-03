@@ -1,11 +1,12 @@
 import 'dart:ui';
 import 'dart:async';
-import 'package:app_ppm/constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:app_ppm/components/BackgroundImage.dart';
+import 'package:app_ppm/screens/home/home.dart';
+import 'package:app_ppm/utils/app_theme.dart';
 
-import 'package:app_ppm/pages/components/BackgroundImage.dart';
-import 'package:app_ppm/pages/home/home_page.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key key}) : super(key: key);
@@ -37,7 +38,8 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-            builder: (BuildContext context) => HomePage(),)
+            builder: (BuildContext context) => Home(),
+        ),
     );
   }
 
@@ -56,7 +58,10 @@ class _SplashScreenState extends State<SplashScreen> {
             bottom: 201,
             left: 50,
             child: Container(
-              child: Icon(Icons.directions_walk, size: 95, color: Colors.white),
+              child: Icon(
+                  Icons.directions_walk,
+                  size: 95,
+                  color: Colors.white),
             ),
           ),
 
@@ -70,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Text(
                     "PERCURSOS",
                     style: TextStyle(
-                      color: PPTheme().primaryColor,
+                      color: AppTheme().primaryColor,
                       fontSize: 44,
                       fontFamily: "Ubuntu",
                       decoration: TextDecoration.none,
@@ -92,7 +97,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Text(
                     "PEDESTRES",
                     style: TextStyle(
-                      color: PPTheme().accentColor,
+                      color: AppTheme().accentColor,
                       fontSize: 60,
                       fontFamily: "Ubuntu",
                       decoration: TextDecoration.none,

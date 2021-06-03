@@ -1,9 +1,10 @@
 import 'package:app_ppm/providers/firebaseProvider.dart';
-import 'package:app_ppm/screens/home/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:app_ppm/screens/home/home.dart';
+import 'package:app_ppm/screens/splash/SplashScreen.dart';
 
 
 Future<void> main() async{
@@ -31,7 +32,7 @@ class App extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: true,
-      home: Home(),
+      home: SplashScreen(),
     );
   }
 
