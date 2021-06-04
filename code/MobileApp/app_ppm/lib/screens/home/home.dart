@@ -50,6 +50,7 @@ class Home extends StatelessWidget {
                             ],
                           ),
                         ),
+                        //action for GestureDetector
                         onTap: (){
                           print("app: " + "${Provider.of<firebaseProvider>(context, listen: false).xpto2((index + 1).toString())}" );
                         },

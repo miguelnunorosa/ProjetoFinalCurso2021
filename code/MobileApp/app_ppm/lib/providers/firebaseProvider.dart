@@ -2,9 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 
+
 class firebaseProvider extends ChangeNotifier{
 
-  final firestoreInstance = FirebaseFirestore.instance;
+  /*final firestoreInstance = FirebaseFirestore.instance;
 
 
   //TODO aceder a collection no firebase
@@ -21,6 +22,15 @@ class firebaseProvider extends ChangeNotifier{
       });
     });
   }
+*/
+
+
+
+
+
+
+
+
 
 
 
@@ -31,7 +41,7 @@ class firebaseProvider extends ChangeNotifier{
 
   //TODO TESTING - DELETE
   xpto(){
-    notifyListeners();
+    //notifyListeners();
     return "teste info vindo do Provider";
   }
 

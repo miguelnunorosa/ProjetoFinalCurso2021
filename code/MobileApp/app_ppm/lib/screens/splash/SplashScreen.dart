@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:app_ppm/components/BackgroundImage.dart';
 import 'package:app_ppm/screens/home/home.dart';
 import 'package:app_ppm/utils/app_theme.dart';
+import 'package:page_transition/page_transition.dart';
 
 
 
@@ -37,8 +38,13 @@ class _SplashScreenState extends State<SplashScreen> {
   void _navigateToPage() {
     Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
+        /*MaterialPageRoute(
             builder: (BuildContext context) => Home(),
+        ),*/
+        PageTransition(
+            child: Home(),
+            type: PageTransitionType.fade,
+            duration: Duration(seconds: 2),
         ),
     );
   }

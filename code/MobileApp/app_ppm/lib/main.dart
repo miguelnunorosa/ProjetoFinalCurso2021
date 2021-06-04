@@ -33,7 +33,6 @@ class App extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: true,
-      initialRoute: my_routes.SCREEN_SPLASH,
       home: SplashScreen(),
     );
   }
