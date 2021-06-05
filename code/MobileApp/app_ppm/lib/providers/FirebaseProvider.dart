@@ -1,9 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 
 
-class firebaseProvider extends ChangeNotifier{
+class FirebaseProvider extends ChangeNotifier{
 
   /*final firestoreInstance = FirebaseFirestore.instance;
 
@@ -27,10 +28,28 @@ class firebaseProvider extends ChangeNotifier{
 
 
 
+  final _firestoreCollection = FirebaseFirestore.instance.collection('percursos');
 
 
+  listViewItem(){
 
+    return StreamBuilder(
+      stream: _firestoreCollection.snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (!snapshot.hasData) { return Center( child: CircularProgressIndicator() ); }
 
+        return ListView(
+          children: snapshot.data!.docs.map((document) {
+            return Container(
+              child: Center(child: Text(document['title'])),
+            );
+          }).toList(),
+        );
+
+      },
+    );
+
+  }
 
 
 

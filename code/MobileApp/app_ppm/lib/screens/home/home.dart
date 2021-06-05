@@ -1,5 +1,6 @@
 import 'package:app_ppm/components/BackgroundImage.dart';
-import 'package:app_ppm/providers/firebaseProvider.dart';
+import 'package:app_ppm/providers/FirebaseProvider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:app_ppm/utils/routes.dart' as my_routes;
@@ -14,7 +15,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       body: ChangeNotifierProvider(
         create: (BuildContext context) {
-          return firebaseProvider();
+          return FirebaseProvider();
         },
         child: Container(
           //padding: const EdgeInsets.all(8),
@@ -39,12 +40,13 @@ class Home extends StatelessWidget {
                             children: [
                               Column(
                                 children: [
-                                  Text("${Provider.of<firebaseProvider>(context, listen: false).xpto2((index + 1).toString())}" + " . " + "${Provider.of<firebaseProvider>(context).xpto()}",
+                                  /*Text("${Provider.of<FirebaseProvider>(context, listen: false).xpto2((index + 1).toString())}" + " . " + "${Provider.of<FirebaseProvider>(context).xpto()}",
                                     style: TextStyle(
                                       fontFamily: 'Ubuntu',
                                       fontSize: 25,
                                       fontWeight: FontWeight.bold,
-                                    ),)
+                                    ),)*/
+                                  Provider.of<FirebaseProvider>(context, listen: false).listViewItem(),
                                 ],
                               ),
                             ],
@@ -52,13 +54,17 @@ class Home extends StatelessWidget {
                         ),
                         //action for GestureDetector
                         onTap: (){
-                          print("app: " + "${Provider.of<firebaseProvider>(context, listen: false).xpto2((index + 1).toString())}" );
+                          print("app: " + "${Provider.of<FirebaseProvider>(context, listen: false).xpto2((index + 1).toString())}" );
                         },
                       ),
                     );
                   },
                 ),
               ),
+
+
+
+
 
             ],
           ),
