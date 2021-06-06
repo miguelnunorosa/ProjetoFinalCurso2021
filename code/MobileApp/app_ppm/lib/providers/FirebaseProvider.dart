@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -28,11 +29,10 @@ class FirebaseProvider extends ChangeNotifier{
 
 
 
-  final _firestoreCollection = FirebaseFirestore.instance.collection('percursos');
+  /*final _firestoreCollection = FirebaseFirestore.instance.collection('percursos');
 
 
   listViewItem(){
-
     return StreamBuilder(
       stream: _firestoreCollection.snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -41,7 +41,16 @@ class FirebaseProvider extends ChangeNotifier{
         return ListView(
           children: snapshot.data!.docs.map((document) {
             return Container(
-              child: Center(child: Text(document['title'])),
+              child: Center(
+                child: Text(document['title'],
+                  style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontSize: 25,
+                    fontWeight:
+                    FontWeight.bold,
+                  ),
+                ),
+              ),
             );
           }).toList(),
         );
@@ -49,7 +58,12 @@ class FirebaseProvider extends ChangeNotifier{
       },
     );
 
-  }
+  }*/
+
+
+
+
+
 
 
 

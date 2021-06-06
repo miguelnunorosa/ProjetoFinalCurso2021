@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
               Center(
                 child: ListView.builder(
                   padding: const EdgeInsets.fromLTRB(16, 32, 16, 0),
-                  itemCount: 20,
+                  itemCount: 10,
                   itemBuilder: (context, index){
                     return Container(
                       height: 90,
@@ -36,17 +36,16 @@ class Home extends StatelessWidget {
                         child: Card(
                           elevation: 2,
                           child: Stack(
-                            alignment: Alignment.center,
+                            alignment: Alignment.centerLeft,
                             children: [
                               Column(
                                 children: [
-                                  /*Text("${Provider.of<FirebaseProvider>(context, listen: false).xpto2((index + 1).toString())}" + " . " + "${Provider.of<FirebaseProvider>(context).xpto()}",
+                                  Text("${Provider.of<FirebaseProvider>(context, listen: false).xpto2((index + 1).toString())}" + " . " + "${Provider.of<FirebaseProvider>(context).xpto()}",
                                     style: TextStyle(
                                       fontFamily: 'Ubuntu',
                                       fontSize: 25,
                                       fontWeight: FontWeight.bold,
-                                    ),)*/
-                                  Provider.of<FirebaseProvider>(context, listen: false).listViewItem(),
+                                    ),),
                                 ],
                               ),
                             ],
